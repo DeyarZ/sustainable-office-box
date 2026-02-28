@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachhaltige Office Storage Box für Konzernstrukturen | B2B</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            font-weight: 400;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #2d5016;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .container-narrow {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        section:nth-child(even) {
+            background: #f5f5f0;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 0 6rem;
+            background: #ffffff;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subline {
+            font-size: 1.25rem;
+            color: #4a4a4a;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: #2d5016;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #1f3810;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* Image Placeholders */
+        .img-placeholder {
+            background: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6a6a6a;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 2px;
+        }
+
+        .img-placeholder-hero {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .img-placeholder-detail {
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+
+        .img-placeholder-material {
+            width: 100%;
+            aspect-ratio: 3/2;
+        }
+
+        .img-placeholder-sustainability {
+            width: 100%;
+            aspect-ratio: 16/10;
+        }
+
+        /* Product Overview */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid #d5d5d5;
+        }
+
+        .specs-table td {
+            padding: 1rem 0;
+            font-size: 0.9375rem;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 500;
+            width: 50%;
+        }
+
+        .specs-table td:last-child {
+            color: #4a4a4a;
+        }
+
+        /* Material Options */
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .material-card {
+            background: #ffffff;
+            border-radius: 2px;
+        }
+
+        .material-card h4 {
+            margin: 1.5rem 0 1rem;
+        }
+
+        .material-card p {
+            font-size: 0.9375rem;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 2px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .pricing-card h4 {
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin: 1rem 0;
+        }
+
+        .pricing-details {
+            font-size: 0.875rem;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
+
+        .pricing-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f5f5f0;
+            border-left: 3px solid #2d5016;
+            font-size: 0.9375rem;
+            color: #4a4a4a;
+        }
+
+        /* Sustainability */
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .sustainability-list {
+            list-style: none;
+        }
+
+        .sustainability-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #d5d5d5;
+            font-size: 0.9375rem;
+        }
+
+        .sustainability-list li:before {
+            content: "✓";
+            color: #2d5016;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        /* Compliance */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .compliance-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 2px;
+        }
+
+        .compliance-card h4 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-card ul {
+            list-style: none;
+        }
+
+        .compliance-card li {
+            padding: 0.5rem 0;
+            font-size: 0.9375rem;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
+
+        .compliance-card li:before {
+            content: "•";
+            color: #2d5016;
+            font-weight: 700;
+            margin-right: 0.75rem;
+        }
+
+        /* Production Capabilities */
+        .production-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .production-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .production-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6a6a6a;
+            margin-bottom: 0.75rem;
+        }
+
+        .production-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* Downloads */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: all 0.2s ease;
+        }
+
+        .download-item:hover {
+            border-color: #2d5016;
+            background: #f5f5f0;
+        }
+
+        .download-icon {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #2d5016;
+            flex-shrink: 0;
+        }
+
+        .download-text {
+            flex: 1;
+        }
+
+        .download-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .download-format {
+            font-size: 0.8125rem;
+            color: #6a6a6a;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h4 {
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            font-size: 0.9375rem;
+            color: #4a4a4a;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid #d5d5d5;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2d5016;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-required {
+            color: #c44;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2d5016;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: #9a9a9a;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .hero {
+                padding: 5rem 0 4rem;
+            }
+
+            .hero-content,
+            .product-grid,
+            .sustainability-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .container,
+            .container-narrow {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Office Storage Solutions</a>
+            <nav>
+                <ul>
+                    <li><a href="#produkt">Produkt</a></li>
+                    <li><a href="#material">Material</a></li>
+                    <li><a href="#preise">Preise</a></li>
+                    <li><a href="#nachhaltigkeit">Nachhaltigkeit</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Nachhaltige Office Storage Box für Konzernstrukturen</h1>
+                    <p class="hero-subline">Made in Germany. 100 % recycelbar. Serienfähig.</p>
+                    <div class="hero-cta">
+                        <a href="#downloads" class="btn btn-primary">Technisches Datenblatt anfordern</a>
+                        <a href="#kontakt" class="btn btn-secondary">B2B-Anfrage stellen</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="img-placeholder img-placeholder-hero">hero-product.jpg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produktübersicht -->
+    <section id="produkt">
+        <div class="container-narrow">
+            <h2>Produktübersicht</h2>
+            <p style="font-size: 1.125rem; color: #4a4a4a; max-width: 800px;">Modulare, stapelbare Aufbewahrungslösung für Laptop und Arbeitsmaterialien. Entwickelt für Desk-Sharing-Umgebungen, Konzernarbeitsplätze und großflächige Rollout-Projekte.</p>
+            
+            <div class="product-grid">
+                <div>
+                    <h3>Technische Spezifikationen</h3>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Außenmaße</td>
+                            <td>420 × 320 × 180 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Innenmaße</td>
+                            <td>395 × 295 × 165 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Gewicht</td>
+                            <td>ca. 1,8 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Belastbarkeit</td>
+                            <td>25 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Stapelbarkeit</td>
+                            <td>bis 5 Einheiten</td>
+                        </tr>
+                        <tr>
+                            <td>Seriennummer</td>
+                            <td>optional</td>
+                        </tr>
+                        <tr>
+                            <td>RFID</td>
+                            <td>optional</td>
+                        </tr>
+                        <tr>
+                            <td>Verpackung</td>
+                            <td>20 Stk./Europalette</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <div class="img-placeholder img-placeholder-detail">product-detail.jpg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materialoptionen -->
+    <section id="material">
+        <div class="container-narrow">
+            <h2>Materialoptionen</h2>
+            <p style="font-size: 1.125rem; color: #4a4a4a; max-width: 800px; margin-bottom: 1rem;">Drei Holzvarianten für unterschiedliche Anforderungsprofile. Alle Oberflächen lösungsmittelfrei, industriegeeignet und kratzfest.</p>
+            
+            <div class="material-grid">
+                <div class="material-card">
+                    <div class="img-placeholder img-placeholder-material">material-buche.jpg</div>
+                    <h4>Buche massiv</h4>
+                    <p>Robust, hohe Tragfähigkeit, gut skalierbar. Bewährtes Standardmaterial für industrielle Serien mit optimaler Verfügbarkeit.</p>
+                </div>
+                <div class="material-card">
+                    <div class="img-placeholder img-placeholder-material">material-birke.jpg</div>
+                    <h4>Birke Multiplex</h4>
+                    <p>Formstabil, moderne Schichtoptik, ideal für Serienfertigung. Reduzierte Materialkosten bei gleichbleibender Funktionalität.</p>
+                </div>
+                <div class="material-card">
+                    <div class="img-placeholder img-placeholder-material">material-eiche.jpg</div>
+                    <h4>Eiche massiv (Premium)</h4>
+                    <p>Hochwertige Optik, erhöhte Materialkosten. Für repräsentative Umgebungen mit erhöhten gestalterischen Anforderungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preisstruktur -->
+    <section id="preise">
+        <div class="container-narrow">
+            <h2>Preisstruktur B2B</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Standard Serie</h4>
+                    <div class="pricing-amount">ab 49,50 €</div>
+                    <div class="pricing-details">
+                        pro Stück<br>
+                        Mindestabnahme: ≥ 1.000 Stück<br>
+                        Buche oder Birke Multiplex
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <h4>Kleinserie</h4>
+                    <div class="pricing-amount">59–69 €</div>
+                    <div class="pricing-details">
+                        pro Stück<br>
+                        Abnahmemenge: &lt; 500 Stück<br>
+                        Alle Materialvarianten
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <h4>Eiche Premium</h4>
+                    <div class="pricing-amount">+10–15 €</div>
+                    <div class="pricing-details">
+                        Aufpreis pro Stück<br>
+                        Zusätzlich zum Basispreis<br>
+                        Je nach Stückzahl
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <h4>Individualisierung</h4>
+                    <div class="pricing-amount">auf Anfrage</div>
+                    <div class="pricing-details">
+                        Branding (Logo, Prägung)<br>
+                        RFID-Integration<br>
+                        Seriennummern
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <strong>Hinweis:</strong> Endpreis abhängig von Stückzahl, Holzart und Individualisierungsgrad. Angebot nach Spezifikation. Staffelpreise für internationale Rollouts auf Anfrage.
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability & Umwelt -->
+    <section id="nachhaltigkeit">
+        <div class="container-narrow">
+            <h2>Nachhaltigkeit & Umwelt</h2>
+            
+            <div class="sustainability-content">
+                <div>
+                    <ul class="sustainability-list">
+                        <li><strong>Monomaterial-Design</strong> — Design for Circularity, vollständig recycelbar</li>
+                        <li><strong>Design for Disassembly</strong> — Zerlegbare Konstruktion, einfache Materialrückführung</li>
+                        <li><strong>CO₂-Reduktionsstrategie</strong> — Lifecycle Assessment optional verfügbar</li>
+                        <li><strong>FSC/PEFC-Zertifizierung</strong> — Auf Wunsch umsetzbar</li>
+                        <li><strong>ISO 14001-Vorbereitung</strong> — Prozesse auditfähig</li>
+                        <li><strong>Closed-Loop-Perspektive</strong> — Rücknahmesysteme in Planung</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="img-placeholder img-placeholder-sustainability">sustainability.jpg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Supplier Standards -->
+    <section id="compliance">
+        <div class="container-narrow">
+            <h2>Compliance & Supplier Standards</h2>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>Verhaltenskodex</h4>
+                    <ul>
+                        <li>BMW Supplier Code of Conduct anerkannt</li>
+                        <li>Eigener Verhaltenskodex implementiert</li>
+                        <li>Benannte Compliance-Verantwortliche</li>
+                        <li>Nachhaltigkeitsrichtlinie dokumentiert</li>
+                    </ul>
+                </div>
+                <div class="compliance-card">
+                    <h4>Auditfähigkeit</h4>
+                    <ul>
+                        <li>RBA-kompatible Prozesse</li>
+                        <li>LkSG-konforme Strukturen</li>
+                        <li>Externe Auditierung möglich</li>
+                        <li>Transparente Dokumentation</li>
+                    </ul>
+                </div>
+                <div class="compliance-card">
+                    <h4>Regulatorische Anforderungen</h4>
+                    <ul>
+                        <li>REACH-konform</li>
+                        <li>DSGVO-konform</li>
+                        <li>Antikorruptionsrichtlinie aktiv</li>
+                        <li>Whistleblower-System implementiert</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lieferketten-Sorgfalt -->
+    <section>
+        <div class="container-narrow">
+            <h2>Lieferketten-Sorgfalt</h2>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>Risikomanagement</h4>
+                    <ul>
+                        <li>Systematische Risikoanalyse</li>
+                        <li>Nachhaltigkeitsanforderungen an Zulieferer</li>
+                        <li>Regelmäßige Lieferantenbewertung</li>
+                        <li>Präventionsmaßnahmen dokumentiert</li>
+                    </ul>
+                </div>
+                <div class="compliance-card">
+                    <h4>Transparenz</h4>
+                    <ul>
+                        <li>Transparente Lieferkette</li>
+                        <li>Keine kritischen Rohstoffe</li>
+                        <li>Herkunftsnachweise verfügbar</li>
+                        <li>Konfliktfreie Beschaffung</li>
+                    </ul>
+                </div>
+                <div class="compliance-card">
+                    <h4>Dokumentation</h4>
+                    <ul>
+                        <li>Dokumentierte Sorgfaltsprozesse</li>
+                        <li>Beschwerdemechanismus vorhanden</li>
+                        <li>Abhilfemaßnahmen definiert</li>
+                        <li>Jährliche Berichterstattung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produktions- & Lieferfähigkeit -->
+    <section>
+        <div class="container-narrow">
+            <h2>Produktions- & Lieferfähigkeit</h2>
+            
+            <div class="production-grid">
+                <div class="production-item">
+                    <div class="production-label">Kapazität</div>
+                    <div class="production-value">[X.XXX] Einheiten/Monat</div>
+                </div>
+                <div class="production-item">
+                    <div class="production-label">Lieferzeit</div>
+                    <div class="production-value">[X] Wochen</div>
+                    <p style="font-size: 0.875rem; color: #6a6a6a; margin-top: 0.5rem;">ab Auftragsbestätigung</p>
+                </div>
+                <div class="production-item">
+                    <div class="production-label">Mindestbestellmenge</div>
+                    <div class="production-value">100 Stück</div>
+                </div>
+                <div class="production-item">
+                    <div class="production-label">Produktionsstandort</div>
+                    <div class="production-value">[Stadt]</div>
+                    <p style="font-size: 0.875rem; color: #6a6a6a; margin-top: 0.5rem;">Deutschland</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: #ffffff; border-radius: 2px;">
+                <h4>Skalierbarkeit für internationale Rollouts</h4>
+                <p style="color: #4a4a4a;">Produktionskapazität flexibel erweiterbar. Logistikpartner für europäische und internationale Auslieferung etabliert. Projektmanagement für Großbestellungen verfügbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloadbereich -->
+    <section id="downloads">
+        <div class="container-narrow">
+            <h2>Downloadbereich</h2>
+            
+            <div class="download-grid">
+                <a href="#" class="download-item">
+                    <div class="download-icon">📄</div>
+                    <div class="download-text">
+                        <div class="download-title">Technisches Datenblatt</div>
+                        <div class="download-format">PDF · 2,3 MB</div>
+                    </div>
+                </a>
+                <a href="#" class="download-item">
+                    <div class="download-icon">🌱</div>
+                    <div class="download-text">
+                        <div class="download-title">Nachhaltigkeitsrichtlinie</div>
+                        <div class="download-format">PDF · 1,8 MB</div>
+                    </div>
+                </a>
+                <a href="#" class="download-item">
+                    <div class="download-icon">🏢</div>
+                    <div class="download-text">
+                        <div class="download-title">Unternehmensprofil</div>
+                        <div class="download-format">PDF · 3,1 MB</div>
+                    </div>
+                </a>
+                <a href="#" class="download-item">
+                    <div class="download-icon">✓</div>
+                    <div class="download-text">
+                        <div class="download-title">Supplier-Compliance-Statement</div>
+                        <div class="download-format">PDF · 1,5 MB</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+        <div class="container-narrow">
+            <h2>Kontakt B2B</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h4>Ansprechpartner</h4>
+                    <p><strong>[Name, Position]</strong></p>
+                    
+                    <h4>E-Mail</h4>
+                    <p><a href="mailto:info@unternehmen.de" style="color: #2d5016; text-decoration: none;">info@unternehmen.de</a></p>
+                    
+                    <h4>Telefon</h4>
+                    <p>+49 XXX XXXXXXXX</p>
+                    
+                    <h4>Geschäftszeiten</h4>
+                    <p>Mo–Fr: 08:00–17:00 Uhr</p>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="firma">Firma <span class="form-required">*</span></label>
+                            <input type="text" id="firma" name="firma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ansprechpartner">Ansprechpartner</label>
+                            <input type="text" id="ansprechpartner" name="ansprechpartner">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail <span class="form-required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon">Telefon</label>
+                            <input type="tel" id="telefon" name="telefon">
+                        </div>
+                        <div class="form-group">
+                            <label for="stueckzahl">Gewünschte Stückzahl</label>
+                            <input type="text" id="stueckzahl" name="stueckzahl">
+                        </div>
+                        <div class="form-group">
+                            <label for="nachricht">Nachricht</label>
+                            <textarea id="nachricht" name="nachricht"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Anfrage absenden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB (B2B)</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Office Storage Solutions. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
