@@ -922,12 +922,7 @@
                 </div>
                 
                 <div class="contact-form" id="contact-form-container">
-                    <form id="contact-form" action="https://formsubmit.co/m.worlitzer@gmx.de" method="POST">
-                        <input type="hidden" name="_subject" value="B2B-Anfrage: Office Storage Box">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://sustainable-office-box.vercel.app/danke">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="text" name="_honey" style="display:none">
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="firma">Firma <span class="form-required">*</span></label>
                             <input type="text" id="firma" name="firma" required>
@@ -1060,3 +1055,33 @@
         </div>
     </footer>
 
+    <script>
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Wird gesendet...';
+            
+            const data = Object.fromEntries(new FormData(form));
+            
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/m.worlitzer@gmx.de', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const json = await res.json();
+                if (json.success) {
+                    form.style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                } else {
+                    throw new Error(json.message || 'Fehler');
+                }
+            } catch (err) {
+                alert('Fehler beim Senden: ' + err.message + '\n\nBitte kontaktieren Sie uns telefonisch: +49 (0) 176 556 09003');
+                btn.disabled = false;
+                btn.textContent = 'Anfrage absenden';
+            }
+        });
+    </script>
