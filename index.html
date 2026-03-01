@@ -964,9 +964,6 @@
                     <h4>Ansprechpartner</h4>
                     <p><strong>Manuel Worlitzer</strong><br>Geschäftsführer</p>
                     
-                    <h4>E-Mail</h4>
-                    <p><a href="mailto:kontakt@office-storage-solutions.de" style="color: #2d5016; text-decoration: none;">kontakt@office-storage-solutions.de</a></p>
-                    
                     <h4>Telefon</h4>
                     <p><a href="tel:+4917655609003" style="color: #2d5016; text-decoration: none;">+49 (0) 176 556 09003</a></p>
                     
@@ -978,9 +975,8 @@
                 </div>
                 
                 <div class="contact-form" id="contact-form-container">
-                    <form id="contact-form" action="https://formspree.io/f/xplaceholder" method="POST">
+                    <form id="contact-form" action="https://formspree.io/m.worlitzer@gmx.de" method="POST">
                         <input type="hidden" name="_subject" value="B2B-Anfrage: Office Storage Box">
-                        <input type="hidden" name="_next" value="#">
                         <div class="form-group">
                             <label for="firma">Firma <span class="form-required">*</span></label>
                             <input type="text" id="firma" name="firma" required>
@@ -1051,8 +1047,7 @@
 
             <h3>Kontakt</h3>
             <p>
-                Telefon: +49 (0) 176 556 09003<br>
-                E-Mail: m.worlitzer@gmx.de
+                Telefon: +49 (0) 176 556 09003
             </p>
 
             <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
@@ -1087,8 +1082,7 @@
             <p style="color: #4a4a4a;">
                 Manuel Worlitzer<br>
                 Sternweg 6<br>
-                85598 Baldham<br>
-                E-Mail: m.worlitzer@gmx.de
+                85598 Baldham
             </p>
 
             <h3>3. Datenerfassung auf dieser Website</h3>
@@ -1115,23 +1109,24 @@
     </footer>
 
     <script>
-        // Handle form submission with mailto fallback
         const form = document.getElementById('contact-form');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = new FormData(form);
-            const subject = encodeURIComponent('B2B-Anfrage: Office Storage Box');
-            let body = '';
-            for (const [key, value] of formData.entries()) {
-                if (key.startsWith('_')) continue;
-                body += key.charAt(0).toUpperCase() + key.slice(1) + ': ' + value + '\n';
-            }
-            
-            window.location.href = 'mailto:m.worlitzer@gmx.de?subject=' + subject + '&body=' + encodeURIComponent(body);
-            
-            form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(r => {
+                if (r.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                } else {
+                    alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');
+                }
+            }).catch(() => {
+                alert('Verbindungsfehler. Bitte versuchen Sie es erneut.');
+            });
         });
     </script>
 </body>
