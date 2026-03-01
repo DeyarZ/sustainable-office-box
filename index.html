@@ -6,7 +6,7 @@
     <title>Nachhaltige Office Storage Box für Konzernstrukturen | B2B</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,68 +21,71 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 16px;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #faf8f5;
             font-weight: 400;
         }
 
         h1, h2, h3, h4 {
-            font-weight: 600;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
             line-height: 1.2;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: #2c2c2c;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             letter-spacing: -0.02em;
+            margin-bottom: 2rem;
         }
 
         h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             letter-spacing: -0.01em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         h3 {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-bottom: 1.5rem;
         }
 
         h4 {
-            font-size: 1.125rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         /* Header */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e5e5;
+            background: rgba(250, 248, 245, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 115, 85, 0.15);
             z-index: 1000;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
         }
 
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #1a1a1a;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #2c2c2c;
             text-decoration: none;
             letter-spacing: -0.01em;
         }
@@ -90,114 +93,119 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: #1a1a1a;
+            color: #2c2c2c;
             text-decoration: none;
             font-size: 0.9375rem;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease;
+            letter-spacing: 0.01em;
         }
 
         nav a:hover {
-            color: #2d5016;
+            color: #8B7355;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         .container-narrow {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         section {
-            padding: 6rem 0;
+            padding: 8rem 0;
         }
 
         section:nth-child(even) {
-            background: #f5f5f0;
+            background: #ffffff;
         }
 
         /* Hero */
         .hero {
-            padding: 8rem 0 6rem;
-            background: #ffffff;
+            padding: 10rem 0 8rem;
+            background: #faf8f5;
         }
 
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
         }
 
         .hero-text h1 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .hero-subline {
-            font-size: 1.25rem;
-            color: #4a4a4a;
-            margin-bottom: 2.5rem;
+            font-size: 1.375rem;
+            color: #5a5a5a;
+            margin-bottom: 3rem;
             font-weight: 400;
+            line-height: 1.6;
         }
 
         .hero-cta {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 1.125rem 2.5rem;
             font-size: 0.9375rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 2px;
-            transition: all 0.2s ease;
+            border-radius: 0;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
+            letter-spacing: 0.02em;
         }
 
         .btn-primary {
-            background: #2d5016;
+            background: #8B7355;
             color: #ffffff;
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.15);
         }
 
         .btn-primary:hover {
-            background: #1f3810;
+            background: #6d5a43;
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.25);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
             background: transparent;
-            color: #1a1a1a;
-            border: 2px solid #1a1a1a;
+            color: #2c2c2c;
+            border: 2px solid #2c2c2c;
         }
 
         .btn-secondary:hover {
-            background: #1a1a1a;
-            color: #ffffff;
+            background: #2c2c2c;
+            color: #faf8f5;
         }
 
         /* Image Placeholders */
         .img-placeholder {
-            background: #e5e5e5;
+            background: #e8e6e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6a6a6a;
+            color: #8a8a8a;
             font-size: 0.875rem;
             font-weight: 500;
-            border-radius: 2px;
         }
 
         .img-placeholder-hero {
@@ -224,106 +232,120 @@
         .product-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: start;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .specs-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .specs-table tr {
-            border-bottom: 1px solid #d5d5d5;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.12);
         }
 
         .specs-table td {
-            padding: 1rem 0;
+            padding: 1.375rem 0;
             font-size: 0.9375rem;
         }
 
         .specs-table td:first-child {
             font-weight: 500;
             width: 50%;
+            color: #2c2c2c;
         }
 
         .specs-table td:last-child {
-            color: #4a4a4a;
+            color: #5a5a5a;
         }
 
         /* Material Options */
         .material-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .material-card {
-            background: #ffffff;
-            border-radius: 2px;
+            background: #faf8f5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(44, 44, 44, 0.08);
         }
 
         .material-card h4 {
-            margin: 1.5rem 0 1rem;
+            margin: 2rem 0 1.25rem;
         }
 
         .material-card p {
             font-size: 0.9375rem;
-            color: #4a4a4a;
+            color: #5a5a5a;
             line-height: 1.7;
         }
 
         /* Pricing */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .pricing-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 2px;
-            border: 1px solid #e5e5e5;
+            background: #faf8f5;
+            padding: 3rem 2.5rem;
+            border-top: 3px solid #8B7355;
+            box-shadow: 0 4px 20px rgba(44, 44, 44, 0.06);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 8px 32px rgba(44, 44, 44, 0.12);
+            transform: translateY(-2px);
         }
 
         .pricing-card h4 {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .pricing-amount {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2d5016;
-            margin: 1rem 0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #8B7355;
+            margin: 1.5rem 0;
         }
 
         .pricing-details {
-            font-size: 0.875rem;
-            color: #4a4a4a;
-            line-height: 1.7;
+            font-size: 0.9375rem;
+            color: #5a5a5a;
+            line-height: 1.8;
         }
 
         .pricing-note {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f5f5f0;
-            border-left: 3px solid #2d5016;
+            margin-top: 3rem;
+            padding: 2rem 2.5rem;
+            background: #faf8f5;
+            border-left: 4px solid #8B7355;
             font-size: 0.9375rem;
-            color: #4a4a4a;
+            color: #5a5a5a;
+            box-shadow: 0 2px 12px rgba(44, 44, 44, 0.04);
         }
 
         /* Sustainability */
         .sustainability-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 6rem;
             align-items: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .sustainability-list {
@@ -331,35 +353,35 @@
         }
 
         .sustainability-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid #d5d5d5;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.12);
             font-size: 0.9375rem;
         }
 
         .sustainability-list li:before {
             content: "✓";
-            color: #2d5016;
+            color: #8B7355;
             font-weight: 700;
-            margin-right: 1rem;
+            margin-right: 1.25rem;
         }
 
         /* Compliance */
         .compliance-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .compliance-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 2px;
+            background: #faf8f5;
+            padding: 2.5rem;
+            box-shadow: 0 2px 16px rgba(44, 44, 44, 0.05);
         }
 
         .compliance-card h4 {
-            color: #2d5016;
-            margin-bottom: 1rem;
+            color: #8B7355;
+            margin-bottom: 1.5rem;
         }
 
         .compliance-card ul {
@@ -367,84 +389,85 @@
         }
 
         .compliance-card li {
-            padding: 0.5rem 0;
+            padding: 0.625rem 0;
             font-size: 0.9375rem;
-            color: #4a4a4a;
+            color: #5a5a5a;
             line-height: 1.7;
         }
 
         .compliance-card li:before {
             content: "•";
-            color: #2d5016;
+            color: #8B7355;
             font-weight: 700;
-            margin-right: 0.75rem;
+            margin-right: 1rem;
         }
 
         /* Production Capabilities */
         .production-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .production-item {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 2px;
+            background: #faf8f5;
+            padding: 3rem 2.5rem;
             text-align: center;
+            box-shadow: 0 2px 16px rgba(44, 44, 44, 0.05);
         }
 
         .production-label {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #6a6a6a;
-            margin-bottom: 0.75rem;
+            letter-spacing: 0.1em;
+            color: #8a8a8a;
+            margin-bottom: 1rem;
         }
 
         .production-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a1a1a;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: #2c2c2c;
         }
 
         /* Downloads */
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
         .download-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: #ffffff;
-            border: 1px solid #e5e5e5;
-            border-radius: 2px;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #faf8f5;
+            border: 1px solid rgba(139, 115, 85, 0.15);
             text-decoration: none;
-            color: #1a1a1a;
-            transition: all 0.2s ease;
+            color: #2c2c2c;
+            transition: all 0.3s ease;
         }
 
         .download-item:hover {
-            border-color: #2d5016;
-            background: #f5f5f0;
+            border-color: #8B7355;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(44, 44, 44, 0.06);
         }
 
         .download-icon {
-            width: 48px;
-            height: 48px;
-            background: #f5f5f0;
+            width: 56px;
+            height: 56px;
+            background: rgba(139, 115, 85, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #2d5016;
+            color: #8B7355;
             flex-shrink: 0;
         }
 
@@ -454,24 +477,24 @@
 
         .download-title {
             font-weight: 600;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.375rem;
         }
 
         .download-format {
             font-size: 0.8125rem;
-            color: #6a6a6a;
+            color: #8a8a8a;
         }
 
         /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            margin-top: 3rem;
+            gap: 6rem;
+            margin-top: 4rem;
         }
 
         .contact-info h4 {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .contact-info h4:first-child {
@@ -480,49 +503,50 @@
 
         .contact-info p {
             font-size: 0.9375rem;
-            color: #4a4a4a;
+            color: #5a5a5a;
         }
 
         .contact-form {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 2px;
+            background: #faf8f5;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 4px 24px rgba(44, 44, 44, 0.06);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 500;
             font-size: 0.9375rem;
+            color: #2c2c2c;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid #d5d5d5;
-            border-radius: 2px;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(139, 115, 85, 0.2);
+            background: #ffffff;
             font-family: 'Inter', sans-serif;
             font-size: 0.9375rem;
-            transition: border-color 0.2s ease;
-            background: #fff;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #2d5016;
+            border-color: #8B7355;
+            box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
 
         .form-required {
@@ -531,66 +555,46 @@
 
         .form-success {
             display: none;
-            padding: 2rem;
-            background: #f0f7ec;
-            border: 1px solid #2d5016;
-            border-radius: 2px;
+            padding: 3rem 2.5rem;
+            background: #faf8f5;
+            border: 2px solid #8B7355;
             text-align: center;
         }
 
         .form-success h3 {
-            color: #2d5016;
-        }
-
-        /* Impressum Page */
-        .legal-page {
-            padding: 6rem 0 4rem;
-            min-height: 100vh;
-        }
-
-        .legal-page h2 {
-            margin-bottom: 2rem;
-        }
-
-        .legal-page h3 {
-            margin-top: 2rem;
-        }
-
-        .legal-page p, .legal-page li {
-            color: #4a4a4a;
-            font-size: 0.9375rem;
+            color: #8B7355;
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
-            color: #ffffff;
-            padding: 3rem 0 2rem;
+            background: #2c2c2c;
+            color: #faf8f5;
+            padding: 4rem 0 2.5rem;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             text-align: center;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .footer-links a {
-            color: #ffffff;
+            color: #faf8f5;
             text-decoration: none;
             font-size: 0.9375rem;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: #2d5016;
+            color: #8B7355;
         }
 
         .footer-copyright {
@@ -601,15 +605,15 @@
         /* Responsive */
         @media (max-width: 1024px) {
             nav ul {
-                gap: 1.5rem;
+                gap: 2rem;
             }
 
             section {
-                padding: 4rem 0;
+                padding: 5rem 0;
             }
 
             .hero {
-                padding: 5rem 0 4rem;
+                padding: 6rem 0 5rem;
             }
 
             .hero-content,
@@ -617,33 +621,34 @@
             .sustainability-content,
             .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 3rem;
             }
         }
 
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
+                padding: 0 2rem;
             }
 
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
+                gap: 1.25rem;
             }
 
             .container,
             .container-narrow {
-                padding: 0 1.5rem;
+                padding: 0 2rem;
             }
 
             section {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
 
             .hero {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
 
             .hero-cta {
@@ -657,7 +662,11 @@
 
             .footer-links {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.25rem;
+            }
+
+            .contact-form {
+                padding: 2.5rem 2rem;
             }
         }
     </style>
@@ -693,7 +702,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="/hero-product.jpg" alt="Sustainable Office Storage Box" style="width: 100%; border-radius: 2px;">
+                    <img src="/hero-product.jpg" alt="Sustainable Office Storage Box" style="width: 100%;">
                 </div>
             </div>
         </div>
@@ -703,7 +712,7 @@
     <section id="produkt">
         <div class="container-narrow">
             <h2>Produktübersicht</h2>
-            <p style="font-size: 1.125rem; color: #4a4a4a; max-width: 800px;">Modulare, stapelbare Aufbewahrungslösung für Laptop und Arbeitsmaterialien. Entwickelt für Desk-Sharing-Umgebungen, Konzernarbeitsplätze und großflächige Rollout-Projekte.</p>
+            <p style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px;">Modulare, stapelbare Aufbewahrungslösung für Laptop und Arbeitsmaterialien. Entwickelt für Desk-Sharing-Umgebungen, Konzernarbeitsplätze und großflächige Rollout-Projekte.</p>
             
             <div class="product-grid">
                 <div>
@@ -725,21 +734,21 @@
     <section id="material">
         <div class="container-narrow">
             <h2>Materialoptionen</h2>
-            <p style="font-size: 1.125rem; color: #4a4a4a; max-width: 800px; margin-bottom: 1rem;">Drei Holzvarianten für unterschiedliche Anforderungsprofile. Alle Oberflächen lösungsmittelfrei, industriegeeignet und kratzfest.</p>
+            <p style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px; margin-bottom: 1rem;">Drei Holzvarianten für unterschiedliche Anforderungsprofile. Alle Oberflächen lösungsmittelfrei, industriegeeignet und kratzfest.</p>
             
             <div class="material-grid">
                 <div class="material-card">
-                    <img src="/material-buche.jpg" alt="Buche massiv" style="width: 100%; border-radius: 2px;">
+                    <img src="/material-buche.jpg" alt="Buche massiv" style="width: 100%;">
                     <h4>Buche massiv</h4>
                     <p>Robust, hohe Tragfähigkeit, gut skalierbar. Bewährtes Standardmaterial für industrielle Serien mit optimaler Verfügbarkeit.</p>
                 </div>
                 <div class="material-card">
-                    <img src="/material-birke.jpg" alt="Birke Multiplex" style="width: 100%; border-radius: 2px;">
+                    <img src="/material-birke.jpg" alt="Birke Multiplex" style="width: 100%;">
                     <h4>Birke Multiplex</h4>
                     <p>Formstabil, moderne Schichtoptik, ideal für Serienfertigung. Reduzierte Materialkosten bei gleichbleibender Funktionalität.</p>
                 </div>
                 <div class="material-card">
-                    <img src="/material-eiche.jpg" alt="Eiche massiv Premium" style="width: 100%; border-radius: 2px;">
+                    <img src="/material-eiche.jpg" alt="Eiche massiv Premium" style="width: 100%;">
                     <h4>Eiche massiv (Premium)</h4>
                     <p>Hochwertige Optik, erhöhte Materialkosten. Für repräsentative Umgebungen mit erhöhten gestalterischen Anforderungen.</p>
                 </div>
@@ -756,12 +765,12 @@
                 <div class="pricing-card">
                     <h4>Standard Serie</h4>
                     <div class="pricing-amount">ab 49,50 €</div>
-                    <div class="pricing-details">pro Stück<br>Mindestabnahme: ≥ 1.000 Stück<br>Buche oder Birke Multiplex</div>
+                    <div class="pricing-details">pro Stück<br>Buche oder Birke Multiplex</div>
                 </div>
                 <div class="pricing-card">
                     <h4>Kleinserie</h4>
                     <div class="pricing-amount">59–99 €</div>
-                    <div class="pricing-details">pro Stück<br>Abnahmemenge: &lt; 500 Stück<br>Alle Materialvarianten</div>
+                    <div class="pricing-details">pro Stück<br>Alle Materialvarianten</div>
                 </div>
                 <div class="pricing-card">
                     <h4>Eiche Premium</h4>
@@ -826,6 +835,7 @@
                         <li>Transparente Dokumentation</li>
                     </ul>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -879,22 +889,24 @@
                 <div class="production-item">
                     <div class="production-label">Lieferzeit</div>
                     <div class="production-value">2–4 Wochen</div>
-                    <p style="font-size: 0.875rem; color: #6a6a6a; margin-top: 0.5rem;">je nach Anfrage</p>
+                    <p style="font-size: 0.875rem; color: #8a8a8a; margin-top: 0.75rem;">je nach Anfrage</p>
                 </div>
                 <div class="production-item">
                     <div class="production-label">Produktionsstandort</div>
                     <div class="production-value">Baldham</div>
-                    <p style="font-size: 0.875rem; color: #6a6a6a; margin-top: 0.5rem;">Deutschland</p>
+                    <p style="font-size: 0.875rem; color: #8a8a8a; margin-top: 0.75rem;">Deutschland</p>
                 </div>
             </div>
             
-            <div style="margin-top: 3rem; padding: 2rem; background: #ffffff; border-radius: 2px;">
+            <div style="margin-top: 4rem; padding: 2.5rem; background: #faf8f5; box-shadow: 0 2px 16px rgba(44, 44, 44, 0.05);">
                 <h4>Skalierbarkeit für internationale Rollouts</h4>
-                <p style="color: #4a4a4a;">Produktionskapazität flexibel erweiterbar. Logistikpartner für europäische und internationale Auslieferung etabliert. Projektmanagement für Großbestellungen verfügbar.</p>
+                <p style="color: #5a5a5a;">Produktionskapazität flexibel erweiterbar. Logistikpartner für europäische und internationale Auslieferung etabliert. Projektmanagement für Großbestellungen verfügbar.</p>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
+    <section id="kontakt">
         <div class="container-narrow">
             <h2>Kontakt B2B</h2>
             
@@ -904,7 +916,7 @@
                     <p><strong>Manuel Worlitzer</strong><br>Geschäftsführer</p>
                     
                     <h4>Telefon</h4>
-                    <p><a href="tel:+4917655609003" style="color: #2d5016; text-decoration: none;">+49 (0) 176 556 09003</a></p>
+                    <p><a href="tel:+4917655609003" style="color: #8B7355; text-decoration: none;">+49 (0) 176 556 09003</a></p>
                     
                     <h4>Geschäftszeiten</h4>
                     <p>Mo–Fr: 08:00–17:00 Uhr</p>
@@ -971,74 +983,12 @@
         </div>
     </section>
 
-    <!-- Impressum -->
-    <section id="impressum" style="background: #ffffff;">
-        <div class="container-narrow">
-            <h2>Impressum</h2>
-            
-            <h3>Angaben gemäß § 5 TMG</h3>
-            <p>
-                Manuel Worlitzer<br>
-                Sternweg 6<br>
-                85598 Baldham<br>
-                Deutschland
-            </p>
-
-            <h3>Kontakt</h3>
-            <p>
-                Telefon: +49 (0) 176 556 09003
-            </p>
-
-            <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-            <p>
-                Manuel Worlitzer<br>
-                Sternweg 6<br>
-                85598 Baldham
-            </p>
-
-            <h3>Haftungsausschluss</h3>
-            <h4>Haftung für Inhalte</h4>
-            <p style="color: #4a4a4a;">Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-
-            <h4>Haftung für Links</h4>
-            <p style="color: #4a4a4a;">Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-
-            <h4>Urheberrecht</h4>
-            <p style="color: #4a4a4a;">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-        </div>
-    </section>
-
-    <!-- Datenschutz -->
-    <section id="datenschutz" style="background: #f5f5f0;">
-        <div class="container-narrow">
-            <h2>Datenschutzerklärung</h2>
-            
-            <h3>1. Datenschutz auf einen Blick</h3>
-            <h4>Allgemeine Hinweise</h4>
-            <p style="color: #4a4a4a;">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-
-            <h3>2. Verantwortliche Stelle</h3>
-            <p style="color: #4a4a4a;">
-                Manuel Worlitzer<br>
-                Sternweg 6<br>
-                85598 Baldham
-            </p>
-
-            <h3>3. Datenerfassung auf dieser Website</h3>
-            <h4>Kontaktformular</h4>
-            <p style="color: #4a4a4a;">Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
-
-            <h3>4. Ihre Rechte</h3>
-            <p style="color: #4a4a4a;">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#impressum">Impressum</a>
-                <a href="#datenschutz">Datenschutz</a>
+                <a href="/impressum">Impressum</a>
+                <a href="/datenschutz">Datenschutz</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
             <div class="footer-copyright">
@@ -1077,3 +1027,5 @@
             }
         });
     </script>
+</body>
+</html>

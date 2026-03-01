@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/impressum", "destination": "/impressum.html" },
+    { "source": "/datenschutz", "destination": "/datenschutz.html" }
+  ]
+}
