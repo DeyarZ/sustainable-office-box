@@ -27,7 +27,6 @@
             font-weight: 400;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             font-weight: 600;
             line-height: 1.2;
@@ -106,7 +105,6 @@
             color: #2d5016;
         }
 
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -119,7 +117,6 @@
             padding: 0 2rem;
         }
 
-        /* Sections */
         section {
             padding: 6rem 0;
         }
@@ -158,7 +155,6 @@
             flex-wrap: wrap;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 1rem 2rem;
@@ -478,6 +474,10 @@
             margin-top: 2rem;
         }
 
+        .contact-info h4:first-child {
+            margin-top: 0;
+        }
+
         .contact-info p {
             font-size: 0.9375rem;
             color: #4a4a4a;
@@ -501,7 +501,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.875rem 1rem;
             border: 1px solid #d5d5d5;
@@ -509,10 +510,12 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.9375rem;
             transition: border-color 0.2s ease;
+            background: #fff;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #2d5016;
         }
@@ -524,6 +527,38 @@
 
         .form-required {
             color: #c44;
+        }
+
+        .form-success {
+            display: none;
+            padding: 2rem;
+            background: #f0f7ec;
+            border: 1px solid #2d5016;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .form-success h3 {
+            color: #2d5016;
+        }
+
+        /* Impressum Page */
+        .legal-page {
+            padding: 6rem 0 4rem;
+            min-height: 100vh;
+        }
+
+        .legal-page h2 {
+            margin-bottom: 2rem;
+        }
+
+        .legal-page h3 {
+            margin-top: 2rem;
+        }
+
+        .legal-page p, .legal-page li {
+            color: #4a4a4a;
+            font-size: 0.9375rem;
         }
 
         /* Footer */
@@ -674,38 +709,14 @@
                 <div>
                     <h3>Technische Spezifikationen</h3>
                     <table class="specs-table">
-                        <tr>
-                            <td>Außenmaße</td>
-                            <td>420 × 320 × 180 mm</td>
-                        </tr>
-                        <tr>
-                            <td>Innenmaße</td>
-                            <td>395 × 295 × 165 mm</td>
-                        </tr>
-                        <tr>
-                            <td>Gewicht</td>
-                            <td>ca. 1,8 kg</td>
-                        </tr>
-                        <tr>
-                            <td>Belastbarkeit</td>
-                            <td>25 kg</td>
-                        </tr>
-                        <tr>
-                            <td>Stapelbarkeit</td>
-                            <td>bis 5 Einheiten</td>
-                        </tr>
-                        <tr>
-                            <td>Seriennummer</td>
-                            <td>optional</td>
-                        </tr>
-                        <tr>
-                            <td>RFID</td>
-                            <td>optional</td>
-                        </tr>
-                        <tr>
-                            <td>Verpackung</td>
-                            <td>20 Stk./Europalette</td>
-                        </tr>
+                        <tr><td>Außenmaße</td><td>420 × 320 × 180 mm</td></tr>
+                        <tr><td>Innenmaße</td><td>395 × 295 × 165 mm</td></tr>
+                        <tr><td>Gewicht</td><td>ca. 1,8 kg</td></tr>
+                        <tr><td>Belastbarkeit</td><td>25 kg</td></tr>
+                        <tr><td>Stapelbarkeit</td><td>bis 5 Einheiten</td></tr>
+                        <tr><td>Seriennummer</td><td>optional</td></tr>
+                        <tr><td>RFID</td><td>optional</td></tr>
+                        <tr><td>Verpackung</td><td>20 Stk./Europalette</td></tr>
                     </table>
                 </div>
                 <div>
@@ -750,38 +761,22 @@
                 <div class="pricing-card">
                     <h4>Standard Serie</h4>
                     <div class="pricing-amount">ab 49,50 €</div>
-                    <div class="pricing-details">
-                        pro Stück<br>
-                        Mindestabnahme: ≥ 1.000 Stück<br>
-                        Buche oder Birke Multiplex
-                    </div>
+                    <div class="pricing-details">pro Stück<br>Mindestabnahme: ≥ 1.000 Stück<br>Buche oder Birke Multiplex</div>
                 </div>
                 <div class="pricing-card">
                     <h4>Kleinserie</h4>
                     <div class="pricing-amount">59–69 €</div>
-                    <div class="pricing-details">
-                        pro Stück<br>
-                        Abnahmemenge: &lt; 500 Stück<br>
-                        Alle Materialvarianten
-                    </div>
+                    <div class="pricing-details">pro Stück<br>Abnahmemenge: &lt; 500 Stück<br>Alle Materialvarianten</div>
                 </div>
                 <div class="pricing-card">
                     <h4>Eiche Premium</h4>
                     <div class="pricing-amount">+10–15 €</div>
-                    <div class="pricing-details">
-                        Aufpreis pro Stück<br>
-                        Zusätzlich zum Basispreis<br>
-                        Je nach Stückzahl
-                    </div>
+                    <div class="pricing-details">Aufpreis pro Stück<br>Zusätzlich zum Basispreis<br>Je nach Stückzahl</div>
                 </div>
                 <div class="pricing-card">
                     <h4>Individualisierung</h4>
                     <div class="pricing-amount">auf Anfrage</div>
-                    <div class="pricing-details">
-                        Branding (Logo, Prägung)<br>
-                        RFID-Integration<br>
-                        Seriennummern
-                    </div>
+                    <div class="pricing-details">Branding (Logo, Prägung)<br>RFID-Integration<br>Seriennummern</div>
                 </div>
             </div>
             
@@ -909,7 +904,7 @@
                 </div>
                 <div class="production-item">
                     <div class="production-label">Produktionsstandort</div>
-                    <div class="production-value">[Stadt]</div>
+                    <div class="production-value">Baldham</div>
                     <p style="font-size: 0.875rem; color: #6a6a6a; margin-top: 0.5rem;">Deutschland</p>
                 </div>
             </div>
@@ -967,27 +962,36 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h4>Ansprechpartner</h4>
-                    <p><strong>[Name, Position]</strong></p>
+                    <p><strong>Manuel Worlitzer</strong><br>Geschäftsführer</p>
                     
                     <h4>E-Mail</h4>
-                    <p><a href="mailto:info@unternehmen.de" style="color: #2d5016; text-decoration: none;">info@unternehmen.de</a></p>
+                    <p><a href="mailto:kontakt@office-storage-solutions.de" style="color: #2d5016; text-decoration: none;">kontakt@office-storage-solutions.de</a></p>
                     
                     <h4>Telefon</h4>
-                    <p>+49 XXX XXXXXXXX</p>
+                    <p><a href="tel:+4917655609003" style="color: #2d5016; text-decoration: none;">+49 (0) 176 556 09003</a></p>
                     
                     <h4>Geschäftszeiten</h4>
                     <p>Mo–Fr: 08:00–17:00 Uhr</p>
+
+                    <h4>Adresse</h4>
+                    <p>Manuel Worlitzer<br>Sternweg 6<br>85598 Baldham<br>Deutschland</p>
                 </div>
                 
-                <div class="contact-form">
-                    <form>
+                <div class="contact-form" id="contact-form-container">
+                    <form id="contact-form" action="https://formspree.io/f/xplaceholder" method="POST">
+                        <input type="hidden" name="_subject" value="B2B-Anfrage: Office Storage Box">
+                        <input type="hidden" name="_next" value="#">
                         <div class="form-group">
                             <label for="firma">Firma <span class="form-required">*</span></label>
                             <input type="text" id="firma" name="firma" required>
                         </div>
                         <div class="form-group">
-                            <label for="ansprechpartner">Ansprechpartner</label>
-                            <input type="text" id="ansprechpartner" name="ansprechpartner">
+                            <label for="ansprechpartner">Ansprechpartner <span class="form-required">*</span></label>
+                            <input type="text" id="ansprechpartner" name="ansprechpartner" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position / Abteilung</label>
+                            <input type="text" id="position" name="position" placeholder="z. B. Einkauf, Facility Management">
                         </div>
                         <div class="form-group">
                             <label for="email">E-Mail <span class="form-required">*</span></label>
@@ -999,16 +1003,100 @@
                         </div>
                         <div class="form-group">
                             <label for="stueckzahl">Gewünschte Stückzahl</label>
-                            <input type="text" id="stueckzahl" name="stueckzahl">
+                            <select id="stueckzahl" name="stueckzahl">
+                                <option value="">Bitte wählen</option>
+                                <option value="100-499">100–499 Stück</option>
+                                <option value="500-999">500–999 Stück</option>
+                                <option value="1000-4999">1.000–4.999 Stück</option>
+                                <option value="5000+">5.000+ Stück</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="materialwunsch">Bevorzugtes Material</label>
+                            <select id="materialwunsch" name="materialwunsch">
+                                <option value="">Bitte wählen</option>
+                                <option value="buche">Buche massiv</option>
+                                <option value="birke">Birke Multiplex</option>
+                                <option value="eiche">Eiche massiv (Premium)</option>
+                                <option value="beratung">Beratung gewünscht</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="nachricht">Nachricht</label>
-                            <textarea id="nachricht" name="nachricht"></textarea>
+                            <textarea id="nachricht" name="nachricht" placeholder="Projektdetails, Zeitrahmen, besondere Anforderungen..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Anfrage absenden</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Anfrage absenden</button>
                     </form>
+                    <div class="form-success" id="form-success">
+                        <h3>Vielen Dank für Ihre Anfrage</h3>
+                        <p>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Impressum -->
+    <section id="impressum" style="background: #ffffff;">
+        <div class="container-narrow">
+            <h2>Impressum</h2>
+            
+            <h3>Angaben gemäß § 5 TMG</h3>
+            <p>
+                Manuel Worlitzer<br>
+                Sternweg 6<br>
+                85598 Baldham<br>
+                Deutschland
+            </p>
+
+            <h3>Kontakt</h3>
+            <p>
+                Telefon: +49 (0) 176 556 09003<br>
+                E-Mail: m.worlitzer@gmx.de
+            </p>
+
+            <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+            <p>
+                Manuel Worlitzer<br>
+                Sternweg 6<br>
+                85598 Baldham
+            </p>
+
+            <h3>Haftungsausschluss</h3>
+            <h4>Haftung für Inhalte</h4>
+            <p style="color: #4a4a4a;">Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+            <h4>Haftung für Links</h4>
+            <p style="color: #4a4a4a;">Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+            <h4>Urheberrecht</h4>
+            <p style="color: #4a4a4a;">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+        </div>
+    </section>
+
+    <!-- Datenschutz -->
+    <section id="datenschutz" style="background: #f5f5f0;">
+        <div class="container-narrow">
+            <h2>Datenschutzerklärung</h2>
+            
+            <h3>1. Datenschutz auf einen Blick</h3>
+            <h4>Allgemeine Hinweise</h4>
+            <p style="color: #4a4a4a;">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+
+            <h3>2. Verantwortliche Stelle</h3>
+            <p style="color: #4a4a4a;">
+                Manuel Worlitzer<br>
+                Sternweg 6<br>
+                85598 Baldham<br>
+                E-Mail: m.worlitzer@gmx.de
+            </p>
+
+            <h3>3. Datenerfassung auf dieser Website</h3>
+            <h4>Kontaktformular</h4>
+            <p style="color: #4a4a4a;">Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+            <h3>4. Ihre Rechte</h3>
+            <p style="color: #4a4a4a;">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
         </div>
     </section>
 
@@ -1016,14 +1104,35 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">Impressum</a>
-                <a href="#">Datenschutz</a>
-                <a href="#">AGB (B2B)</a>
+                <a href="#impressum">Impressum</a>
+                <a href="#datenschutz">Datenschutz</a>
+                <a href="#kontakt">Kontakt</a>
             </div>
             <div class="footer-copyright">
-                © 2026 Office Storage Solutions. Alle Rechte vorbehalten.
+                © 2026 Manuel Worlitzer – Office Storage Solutions. Alle Rechte vorbehalten.
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle form submission with mailto fallback
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const subject = encodeURIComponent('B2B-Anfrage: Office Storage Box');
+            let body = '';
+            for (const [key, value] of formData.entries()) {
+                if (key.startsWith('_')) continue;
+                body += key.charAt(0).toUpperCase() + key.slice(1) + ': ' + value + '\n';
+            }
+            
+            window.location.href = 'mailto:m.worlitzer@gmx.de?subject=' + subject + '&body=' + encodeURIComponent(body);
+            
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
