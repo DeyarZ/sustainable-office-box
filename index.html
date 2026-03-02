@@ -669,6 +669,82 @@
                 padding: 2.5rem 2rem;
             }
         }
+        /* Carousel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #8B7355;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #8B7355;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #2c2c2c;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 2;
+        }
+
+        .carousel-btn:hover {
+            background: #fff;
+        }
+
+        .carousel-prev { left: 0.75rem; }
+        .carousel-next { right: 0.75rem; }
     </style>
 </head>
 <body>
@@ -701,8 +777,23 @@
                         <a href="#kontakt" class="btn btn-secondary">B2B-Anfrage stellen</a>
                     </div>
                 </div>
-                <div>
-                    <img src="/hero-product.jpg" alt="Sustainable Office Storage Box" style="width: 100%;">
+                <div class="carousel" id="heroCarousel">
+                    <div class="carousel-track">
+                        <img src="/hero-product.jpg" alt="Office Storage Box im Spind" class="carousel-slide active">
+                        <img src="/hero-2.png" alt="Box auf dem Tisch" class="carousel-slide">
+                        <img src="/hero-3.jpg" alt="Box Maße" class="carousel-slide">
+                        <img src="/hero-4.png" alt="Box tragen im Office" class="carousel-slide">
+                        <img src="/hero-5.png" alt="Tisch im Office" class="carousel-slide">
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" data-index="0"></button>
+                        <button class="carousel-dot" data-index="1"></button>
+                        <button class="carousel-dot" data-index="2"></button>
+                        <button class="carousel-dot" data-index="3"></button>
+                        <button class="carousel-dot" data-index="4"></button>
+                    </div>
+                    <button class="carousel-btn carousel-prev">‹</button>
+                    <button class="carousel-btn carousel-next">›</button>
                 </div>
             </div>
         </div>
@@ -998,6 +1089,36 @@
     </footer>
 
     <script>
+        // Carousel
+        (function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let current = 0;
+            let interval;
+
+            function goTo(i) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (i + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function startAuto() {
+                interval = setInterval(() => goTo(current + 1), 4000);
+            }
+
+            function resetAuto() {
+                clearInterval(interval);
+                startAuto();
+            }
+
+            document.querySelector('.carousel-prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+            document.querySelector('.carousel-next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+            dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
+            startAuto();
+        })();
+
         const form = document.getElementById('contact-form');
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
