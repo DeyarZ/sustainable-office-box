@@ -602,6 +602,123 @@
             color: #9a9a9a;
         }
 
+        /* === WOW EFFECTS === */
+
+        /* Typewriter */
+        .typewriter-line {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #8B7355;
+            width: 0;
+            opacity: 0;
+        }
+
+        .typewriter-line.typing {
+            opacity: 1;
+            animation: typeExpand var(--type-duration, 2s) steps(var(--type-steps, 30), end) forwards;
+        }
+
+        .typewriter-line.done {
+            opacity: 1;
+            width: auto;
+            border-right: none;
+        }
+
+        .typewriter-line.cursor {
+            animation: typeExpand var(--type-duration, 2s) steps(var(--type-steps, 30), end) forwards,
+                       blinkCursor 0.6s step-end infinite;
+        }
+
+        @keyframes typeExpand {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blinkCursor {
+            50% { border-color: transparent; }
+        }
+
+        /* Hero subline fade */
+        .hero-subline {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .hero-subline.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-cta {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .hero-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Staggered children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+        /* Counter pulse */
+        .counter-value {
+            transition: transform 0.2s ease;
+        }
+
+        .counter-value.counting {
+            color: #8B7355;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             nav ul {
@@ -770,8 +887,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Nachhaltige Office Storage Box für Konzernstrukturen</h1>
-                    <p class="hero-subline">Made in Germany. 100 % recycelbar. Serienfähig.</p>
+                    <h1 id="hero-title">
+                        <span class="typewriter-line" data-text="Nachhaltige Office" style="--type-steps:18;--type-duration:1.2s;">Nachhaltige Office</span>
+                        <span class="typewriter-line" data-text="Storage Box für" style="--type-steps:15;--type-duration:1s;">Storage Box für</span>
+                        <span class="typewriter-line" data-text="Konzernstrukturen." style="--type-steps:18;--type-duration:1.1s;">Konzernstrukturen.</span>
+                    </h1>
+                    <p class="hero-subline" id="hero-subline">Made in Germany. 100 % recycelbar. Serienfähig.</p>
                     <div class="hero-cta">
                         <a href="#kontakt" class="btn btn-primary">Technisches Datenblatt anfordern</a>
                         <a href="#kontakt" class="btn btn-secondary">B2B-Anfrage stellen</a>
@@ -800,19 +921,19 @@
     <!-- Produktübersicht -->
     <section id="produkt">
         <div class="container-narrow">
-            <h2>Produktübersicht</h2>
-            <p style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px;">Modulare, stapelbare Aufbewahrungslösung für Laptop und Arbeitsmaterialien. Entwickelt für Desk-Sharing-Umgebungen, Konzernarbeitsplätze und großflächige Rollout-Projekte.</p>
+            <h2 class="reveal">Produktübersicht</h2>
+            <p class="reveal" style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px;">Modulare, stapelbare Aufbewahrungslösung für Laptop und Arbeitsmaterialien. Entwickelt für Desk-Sharing-Umgebungen, Konzernarbeitsplätze und großflächige Rollout-Projekte.</p>
             
             <div class="product-grid">
                 <div>
-                    <h3>Technische Spezifikationen</h3>
-                    <table class="specs-table">
+                    <h3 class="reveal">Technische Spezifikationen</h3>
+                    <table class="specs-table reveal">
                         <tr><td>Außenmaße</td><td>420 × 320 × 180 mm</td></tr>
                         <tr><td>Innenmaße</td><td>395 × 295 × 165 mm</td></tr>
-                        <tr><td>Gewicht</td><td>ca. 1,8 kg</td></tr>
-                        <tr><td>Belastbarkeit</td><td>25 kg</td></tr>
+                        <tr><td>Gewicht</td><td>ca. <span class="counter-value" data-target="1.8" data-decimals="1" data-suffix=" kg">0</span></td></tr>
+                        <tr><td>Belastbarkeit</td><td><span class="counter-value" data-target="25" data-suffix=" kg">0</span></td></tr>
                         <tr><td>Seriennummer</td><td>optional</td></tr>
-                        <tr><td>Verpackung</td><td>20 Stk./Europalette</td></tr>
+                        <tr><td>Verpackung</td><td><span class="counter-value" data-target="20" data-suffix=" Stk./Europalette">0</span></td></tr>
                     </table>
                 </div>
             </div>
@@ -822,10 +943,10 @@
     <!-- Materialoptionen -->
     <section id="material">
         <div class="container-narrow">
-            <h2>Materialoptionen</h2>
-            <p style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px; margin-bottom: 1rem;">Drei Holzvarianten für unterschiedliche Anforderungsprofile. Alle Oberflächen lösungsmittelfrei, industriegeeignet und kratzfest.</p>
+            <h2 class="reveal">Materialoptionen</h2>
+            <p class="reveal" style="font-size: 1.125rem; color: #5a5a5a; max-width: 800px; margin-bottom: 1rem;">Drei Holzvarianten für unterschiedliche Anforderungsprofile. Alle Oberflächen lösungsmittelfrei, industriegeeignet und kratzfest.</p>
             
-            <div class="material-grid">
+            <div class="material-grid stagger-children">
                 <div class="material-card">
                     <img src="/material-buche.png" alt="Buche massiv" style="width: 100%;">
                     <h4>Buche massiv</h4>
@@ -848,9 +969,9 @@
     <!-- Preisstruktur -->
     <section id="preise">
         <div class="container-narrow">
-            <h2>Preisstruktur B2B</h2>
+            <h2 class="reveal">Preisstruktur B2B</h2>
             
-            <div class="pricing-grid">
+            <div class="pricing-grid stagger-children">
                 <div class="pricing-card">
                     <h4>Standard Serie</h4>
                     <div class="pricing-amount">ab 49,50 €</div>
@@ -881,11 +1002,11 @@
     <!-- Sustainability & Umwelt -->
     <section id="nachhaltigkeit">
         <div class="container-narrow">
-            <h2>Nachhaltigkeit & Umwelt</h2>
+            <h2 class="reveal">Nachhaltigkeit &amp; Umwelt</h2>
             
             <div class="sustainability-content">
                 <div>
-                    <ul class="sustainability-list">
+                    <ul class="sustainability-list stagger-children">
                         <li><strong>Monomaterial-Design</strong> – Design for Circularity, vollständig recycelbar</li>
                         <li><strong>Design for Disassembly</strong> – Zerlegbare Konstruktion, einfache Materialrückführung</li>
                         <li><strong>CO₂-Reduktionsstrategie</strong> – Lifecycle Assessment optional verfügbar</li>
@@ -904,9 +1025,9 @@
     <!-- Compliance & Supplier Standards -->
     <section id="compliance">
         <div class="container-narrow">
-            <h2>Compliance & Supplier Standards</h2>
+            <h2 class="reveal">Compliance &amp; Supplier Standards</h2>
             
-            <div class="compliance-grid">
+            <div class="compliance-grid stagger-children">
                 <div class="compliance-card">
                     <h4>Verhaltenskodex</h4>
                     <ul>
@@ -931,9 +1052,9 @@
     <!-- Lieferketten-Sorgfalt -->
     <section>
         <div class="container-narrow">
-            <h2>Lieferketten-Sorgfalt</h2>
+            <h2 class="reveal">Lieferketten-Sorgfalt</h2>
             
-            <div class="compliance-grid">
+            <div class="compliance-grid stagger-children">
                 <div class="compliance-card">
                     <h4>Risikomanagement</h4>
                     <ul>
@@ -968,12 +1089,12 @@
     <!-- Produktions- & Lieferfähigkeit -->
     <section>
         <div class="container-narrow">
-            <h2>Produktions- & Lieferfähigkeit</h2>
+            <h2 class="reveal">Produktions- &amp; Lieferfähigkeit</h2>
             
-            <div class="production-grid">
+            <div class="production-grid stagger-children">
                 <div class="production-item">
                     <div class="production-label">Kapazität</div>
-                    <div class="production-value">2.500 Einheiten/Monat</div>
+                    <div class="production-value"><span class="counter-value" data-target="2500" data-separator="." data-suffix=" Einheiten/Monat">0</span></div>
                 </div>
                 <div class="production-item">
                     <div class="production-label">Lieferzeit</div>
@@ -997,7 +1118,7 @@
     <!-- Contact -->
     <section id="kontakt">
         <div class="container-narrow">
-            <h2>Kontakt B2B</h2>
+            <h2 class="reveal">Kontakt B2B</h2>
             
             <div class="contact-grid">
                 <div class="contact-info">
@@ -1087,6 +1208,103 @@
     </footer>
 
     <script>
+        // === TYPEWRITER HERO ===
+        (function() {
+            const lines = document.querySelectorAll('.typewriter-line');
+            let delay = 400; // initial delay before first line
+            
+            lines.forEach((line, i) => {
+                const duration = parseFloat(getComputedStyle(line).getPropertyValue('--type-duration')) * 1000 || 1500;
+                
+                setTimeout(() => {
+                    line.classList.add('typing');
+                    if (i < lines.length - 1) {
+                        // Not last line: remove cursor after typing
+                        setTimeout(() => {
+                            line.classList.remove('typing');
+                            line.classList.add('done');
+                        }, duration);
+                    } else {
+                        // Last line: keep cursor blinking, then remove
+                        line.classList.add('cursor');
+                        setTimeout(() => {
+                            line.classList.remove('typing', 'cursor');
+                            line.classList.add('done');
+                            // Show subline and CTA after typing finishes
+                            document.getElementById('hero-subline').classList.add('visible');
+                            setTimeout(() => {
+                                document.querySelector('.hero-cta').classList.add('visible');
+                            }, 300);
+                        }, duration + 800);
+                    }
+                }, delay);
+                
+                delay += duration + 500; // gap between lines
+            });
+        })();
+
+        // === SCROLL REVEAL ===
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-children').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // === COUNTER ANIMATION ===
+        (function() {
+            const counters = document.querySelectorAll('.counter-value');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => observer.observe(c));
+
+            function animateCounter(el) {
+                const target = parseFloat(el.dataset.target);
+                const decimals = parseInt(el.dataset.decimals) || 0;
+                const suffix = el.dataset.suffix || '';
+                const separator = el.dataset.separator || '';
+                const duration = 1500;
+                const start = performance.now();
+                el.classList.add('counting');
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    let value = (eased * target).toFixed(decimals);
+                    
+                    if (separator && decimals === 0) {
+                        value = parseInt(value).toLocaleString('de-DE');
+                    }
+                    
+                    el.textContent = value + suffix;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        el.classList.remove('counting');
+                    }
+                }
+                requestAnimationFrame(update);
+            }
+        })();
+
         // Carousel
         (function() {
             const slides = document.querySelectorAll('.carousel-slide');
